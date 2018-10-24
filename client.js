@@ -7,27 +7,12 @@ Class to create clients for the bank.
 module.exports = class Client {
     constructor(clientName){
         this.name = clientName
+        this.accountList = []
         console.log("New Client created:", clientName)
     }
     createAccount(){
-        var account = new Account()
-        this.balance = 0
+        let account = new Account()
+        this.accountList.push(account)
         console.log("New account created with account number", account.accountNumber, "for", this.name)
-    }
-    getBalance(){
-        return this.balance
-    }
-    setBalance(newBalance){
-        this.balance = newBalance
-    }
-    increaseBalance(amount){
-        var currentBalance = this.getBalance()
-        this.setBalance(currentBalance += amount)
-        console.log("Account balance of", this.name, "increased by", amount,". New Balance:", this.balance)
-    }
-    decreaseBalance(amount){
-        var currentBalance = this.getBalance()
-        this.setBalance(currentBalance -= amount)
-        console.log("Account balance of", this.name, "decreased by", amount,". New Balance:", this.balance)
     }
 }

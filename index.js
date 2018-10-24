@@ -12,29 +12,29 @@ Instantiate class Bank to create 'The Friendly Bank', create customers and their
 and increase and decrease their balances.
 */
 
-var friendlyBank = new Bank("The Friendly Bank")
+const friendlyBank = new Bank("The Friendly Bank")
 
-var client1 = new Client("Hans Miller")
+const client1 = new Client("Hans Miller")
 friendlyBank.addClient(client1)
 client1.createAccount()
-client1.increaseBalance(100.13)
-client1.decreaseBalance(200)
+client1.accountList[0].increaseBalance(100.13)
+client1.accountList[0].decreaseBalance(200)
 
 console.log(" ")
 
-var client2 = new Client("Anna Smith")
+const client2 = new Client("Anna Smith")
 friendlyBank.addClient(client2)
 client2.createAccount()
-client2.increaseBalance(3000)
-client2.decreaseBalance(499.60)
+client2.accountList[0].increaseBalance(3000)
+client2.accountList[0].decreaseBalance(499.60)
 
 console.log(" ")
 
-var client3 = new Client("Nina Gomez")
+const client3 = new Client("Nina Gomez")
 friendlyBank.addClient(client3)
 client3.createAccount()
-client3.increaseBalance(1200)
-client3.decreaseBalance(13.99)
+client3.accountList[0].increaseBalance(1200)
+client3.accountList[0].decreaseBalance(13.99)
 
 console.log(" ")
 
@@ -45,4 +45,4 @@ Saving the instance of class Bank to a JSON file and loading account details fro
 Database.save(friendlyBank)
 
 const LoadedFile = Database.load()
-console.log("Customer details for", LoadedFile.clientList[1].name, "were retrieved from the database. Current balance for this client:", LoadedFile.clientList[1].balance)
+console.log("Customer details for", LoadedFile.clientList[1].name, "were retrieved from the database. Current balance for this client:", LoadedFile.clientList[1].accountList[0].balance)

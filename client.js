@@ -15,4 +15,9 @@ module.exports = class Client {
         this.accountList.push(account)
         console.log("New account created with account number", account.accountNumber, "for", this.name)
     }
+    static create ({clientName}){
+        const client = new Client(clientName)
+        client.accountList = accountList.map(Account.create)
+        return client
+    }
 }

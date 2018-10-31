@@ -23,4 +23,7 @@ module.exports = class Account {
         this.setBalance(currentBalance -= amount)
         console.log("Account balance of", this.name, "decreased by", amount,". New Balance:", this.balance)
     }
+    static create(){
+        return new Account()
+    }
 }

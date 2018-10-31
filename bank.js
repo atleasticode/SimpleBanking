@@ -12,4 +12,9 @@ module.exports = class Bank {
         this.clientList.push(newClient)
         console.log("New Client added to", this.instituteName, ":", newClient.name)
     }
+    static create(){
+        const bank = new Bank(instituteName)
+        bank.clientList = clientList.map(Client.create)
+        return bank
+    }
 }
